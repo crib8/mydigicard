@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khrissanto Halili | Contractor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;600&display=swap');
+
+        html {
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1e293b;
+            overflow-x: hidden;
+        }
+
+        section {
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+        }
+
+        .engineering-bg-light {
+            background-color: #ffffff;
+            background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        #loader {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease;
+        }
+
+        .readable-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            border-radius: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-action {
+            background: rgba(241, 245, 249, 1);
+            border: 1px solid rgba(203, 213, 225, 1);
+            color: #475569;
+            transition: all 0.3s ease;
+        }
+
+        .btn-action:hover {
+            background: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+            transform: translateY(-2px);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .mouse {
+            width: 20px;
+            height: 35px;
+            border: 2px solid #cbd5e1;
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .wheel {
+            width: 3px;
+            height: 6px;
+            background: #3b82f6;
+            border-radius: 2px;
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scroll-wheel 1.5s infinite;
+        }
+
+        @keyframes scroll-wheel {
+            0% { transform: translate(-50%, 0); opacity: 1; }
+            100% { transform: translate(-50%, 12px); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="engineering-bg-light">
+
+    <div id="loader">
+        <div class="w-12 h-12 border-4 border-blue-100 border-t-blue-500 rounded-full animate-spin"></div>
+        <p class="mt-4 text-xs tracking-widest text-slate-400 font-bold uppercase">Loading Info ... </p>
+    </div>
+
+    <section class="min-h-screen relative flex flex-col justify-center items-center px-4">
+        <div class="w-full max-w-lg">
+            <div class="relative h-48 rounded-[2.5rem] overflow-hidden mb-[-4rem] shadow-lg" data-aos="fade-down">
+                <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-white/20"></div>
+            </div>
+
+            <div class="readable-card p-8 pt-20 text-center relative z-10" data-aos="fade-up">
+                <div class="absolute -top-16 left-1/2 -translate-x-1/2">
+                    <div class="w-32 h-32 rounded-full border-8 border-white overflow-hidden shadow-xl bg-slate-100">
+                        <img src="Khris.png" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80'">
+                    </div>
+                </div>
+
+                <h1 class="text-3xl font-bold uppercase tracking-tighter mb-1 text-slate-800" style="font-family: 'Syncopate'">Khriss Halili</h1>
+                <p class="text-blue-600 font-semibold text-xs tracking-[0.2em] mb-8 uppercase">Contractor</p>
+
+                <div class="flex justify-center gap-4 mb-8">
+                    <a href="https://wa.me/639158026678" class="w-12 h-12 flex items-center justify-center rounded-2xl btn-action text-xl"><i class="fab fa-whatsapp"></i></a>
+                    <a href="viber://chat?number=%2B639158026678" class="w-12 h-12 flex items-center justify-center rounded-2xl btn-action text-xl"><i class="fab fa-viber"></i></a>
+                    <a href="#" class="w-12 h-12 flex items-center justify-center rounded-2xl btn-action text-xl"><i class="fab fa-weixin"></i></a>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 mb-2">
+                    <a href="tel:+639158026678" class="flex items-center justify-center gap-2 py-4 px-4 bg-slate-900 text-white rounded-2xl font-bold text-sm shadow-lg hover:bg-blue-600 transition-colors">
+                        <i class="fas fa-phone-alt"></i> Call Me
+                    </a>
+                    <button onclick="downloadVCF()" class="flex items-center justify-center gap-2 py-4 px-4 btn-action rounded-2xl font-bold text-sm">
+                        <i class="fas fa-id-card"></i> Save Contact
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Swipe Up</span>
+            <div class="mouse"><div class="wheel"></div></div>
+        </div>
+    </section>
+
+    <section class="min-h-screen flex items-center justify-center px-4">
+        <div class="max-w-4xl w-full grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <span class="text-blue-600 font-bold tracking-[0.2em] text-[10px] uppercase">Service Excellence</span>
+                <h2 class="text-4xl font-bold text-slate-800 mt-2 mb-4">Quality Civil Works</h2>
+                <p class="text-slate-500 leading-relaxed mb-6">Specializing in high-end structural works and unique architectural builds with precision and integrity.</p>
+                <div class="inline-flex items-center gap-2 text-blue-600 font-bold text-xs uppercase tracking-widest">
+                    <span class="w-8 h-[2px] bg-blue-600"></span> Philippine Based
+                </div>
+            </div>
+            <div class="readable-card p-3 shadow-2xl shadow-blue-900/5" data-aos="zoom-in">
+                <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80" class="rounded-2xl w-full h-80 object-cover shadow-inner">
+            </div>
+        </div>
+    </section>
+
+    <section class="min-h-screen flex items-center justify-center px-4">
+        <div class="max-w-md w-full text-center" data-aos="zoom-in">
+            <div class="readable-card p-10">
+                <h3 class="text-xl font-bold text-slate-800 mb-6 uppercase tracking-widest" style="font-family: 'Syncopate'">Get a Quote</h3>
+                <a href="sms:+639158026678?body=Hi Engr. Khrissanto, I would like to inquire about a project." class="block w-full py-5 bg-blue-600 text-white rounded-2xl font-black text-lg shadow-xl shadow-blue-200 hover:scale-[1.02] transition-transform uppercase">
+                    Press to Consult
+                </a>
+                
+                <div class="mt-10 pt-8 border-t border-slate-100 flex justify-center gap-8 text-slate-400 text-2xl">
+                    <a href="https://wa.me/639158026678" class="hover:text-green-500"><i class="fab fa-whatsapp"></i></a>
+                    <a href="viber://chat?number=%2B639158026678" class="hover:text-purple-500"><i class="fab fa-viber"></i></a>
+                    <a href="#" class="hover:text-green-400"><i class="fab fa-weixin"></i></a>
+                </div>
+                <p class="mt-8 text-[10px] font-bold text-slate-300 uppercase tracking-widest">Las Piñas, Philippines</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: false, mirror: true });
+
+        // Loader
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => loader.style.display = 'none', 500);
+            }, 800);
+        });
+
+        // Function to Download VCF
+        function downloadVCF() {
+            const vcfData = `BEGIN:VCARD
+VERSION:3.0
+FN:Khrissanto Halili
+ORG:Halili Contracting
+TITLE:Contractor
+TEL;TYPE=CELL:+639158026678
+ADR;TYPE=WORK:;;Las Piñas;Philippines;;;
+END:VCARD`;
+
+            const blob = new Blob([vcfData], { type: 'text/vcard' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = url;
+            a.download = 'Khrissanto_Halili.vcf';
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
